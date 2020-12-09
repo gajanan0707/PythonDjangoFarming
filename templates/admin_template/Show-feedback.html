@@ -1,0 +1,40 @@
+{% extends 'admin_template/index.html' %}
+
+{% load static %}
+
+{% block body %}
+<div>
+<h1>User Feedback</h1>
+    </div>
+<div style="margin:20px">
+    <table class="table table-sm table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">farmer_name</th>
+            <th scope="col">email</th>
+            <th scope="col">Feedback Message</th>
+            <th scope="col">title</th>
+            <th scope="col">date</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% if Feed %}
+        {% for data in Feed %}
+        <tr>
+            <th scope="row">{{ data.id }}</th>
+            <td>{{ data.farmer_name }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.details }}</td>
+            <td>{{ data.title }}</td>
+            <td>{{ data.date }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr><td colspan="4" style="text-align: center;">Not found</td></tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

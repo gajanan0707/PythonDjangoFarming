@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} signup Page {% endblock title %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+
+{% endblock stylesheet %}
+
+{% block body %}
+<body>
+<div class="container" >
+  <div style="margin:10px">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+            <div style="margin:25px">
+              <h1 class="card-title text-center">Registration form</h1>
+            </div>
+            <form class="form-signup" novalidate method="post" enctype="multipart/form-data" >
+              {% csrf_token %}
+              {% include 'include/form.html' %}
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+              <a class="d-block text-center mt-2 small" href="{% url 'login' %}">Sign in</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/jquery.validate.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+{% endblock body %}

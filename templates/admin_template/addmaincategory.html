@@ -1,0 +1,15 @@
+{% extends 'admin_template/index.html' %}
+
+{% block title %} Maincategory Add Page {% endblock title %}
+
+
+{% block body %}
+<h1>Add Maincategory</h1>
+<div>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% include 'include/form.html' %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,55 @@
+{% extends 'admin_template/index.html' %}
+{% load static %}
+
+
+{% block body %}
+{% block stylesheet %}
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<link href="{% static 'css/shopcss.css' %}" rel="stylesheet">
+
+{% endblock stylesheet %}
+
+<div class="mb-4">
+    <h1><a class="btn btn-primary" href="{% url 'adds_advertise'  %}">Add Advertisement</a></h1>
+</div>
+<div class="container">
+{% if all_adds %}
+<div class="row">
+    {% for data in all_adds %}
+
+
+    <div class="col-md-4 col-sm-6">
+        <div class="product-grid8">
+            <div class="product-image8">
+                <a href="#">
+                    <img class="pic-1" src="{{ data.prod_image.url }}">
+                </a>
+                <ul class="social">
+                    <li><a href="" class="fa fa-search"></a></li>
+                    <li><a href="" class="fa fa-shopping-bag"></a></li>
+                    <li><a href="" class="fa fa-shopping-cart"></a></li>
+                </ul>
+                <span class="product-discount-label">-20%</span>
+            </div>
+            <div class="product-content">
+                <div class="price">£ {{ data.price }}
+                    <span>200</span>
+                </div>
+                <span class="product-shipping">Supplier No {{ data.contact_supplier }}</span>
+                <span class="product-shipping">Created by {{ data.create_by }}</span>
+                <h3 class="title"><a href="#">{{ data.product }}</a></h3>
+                <a class="all-deals" href="">See all deals <i class="fa fa-angle-right icon"></i></a>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+</div>
+{% endif %}
+</div>
+{% endblock body %}

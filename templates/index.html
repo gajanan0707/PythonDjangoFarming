@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+{% endblock stylesheet %}
+
+{% block body %}
+<div class="container">
+	<div class="container" style="margin:40px">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="{% static 'images/kisan.jpg' %}" class="img-fluid" alt="Responsive image">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+					<h3>We Celebrate The Kisan Joy </h3>
+				</div>
+
+
+				<div class="item">
+					<img src="{% static 'images/kisan2.jpg' %}" alt="Chicago" style="width:100%;">
+				</div>
+
+				<div class="item">
+					<img src="{% static 'images/kisan3.jpg' %}" alt="New york" style="width:100%;">
+				</div>
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
+
+		</div>
+	</div>
+</div>
+<div class="care">
+	<div class="container">
+		<div class="care-top">
+			<h3>WE CARE</h3>
+			<P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</P>
+		</div>
+		<div class="care-bottom">
+			<div class="col-md-4 c-bottom">
+				<div class="care-bottom-left">
+					<img src="{% static 'images/tree.png' %}" alt="">
+					<h4>variations of passages</h4>
+					<p> which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+					<div class="view">
+						<a href="{% url 'blog' %}">VIEW</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 c-bottom">
+				<div class="care-bottom-middle">
+					<img src="{% static 'images/tree-1.png' %}" alt="">
+					<h4>variations of passages</h4>
+					<p> which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+					<div class="view">
+						<a href="{% url 'blog' %}">VIEW</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 c-bottom">
+				<div class="care-bottom-right">
+					<img src="{% static 'images/tree-2.png' %}" alt="">
+					<h4>variations of passages</h4>
+					<p> which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+					<div class="view">
+						<a href="{% url 'blog' %}">VIEW</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<div class="news">
+	<div class="container">
+		<div class="news-top">
+			<h3>Blog AND ARTICLES</h3>
+		</div>
+		<div class="news-bottom">
+			<div class="col-md-6 news-bottom-left">
+				<a href="{% url 'blog' %}" class="b-link-stripe b-animate-go  thickbox">
+					<img class="port-pic" class="img-responsive" src="{% static 'images/webimage-9C942F4C-8728-41BD-9BB9F3857933CE31.jpg' %}" />
+					<div class="b-wrapper">
+						<h2 class="b-animate b-from-left b-from   b-delay03 ">
+							<span>Some Iowa Farmers Now Cut Off from Liquid Propane Supplies</span>
+							<button>View full article</button>
+						</h2>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-6 news-bottom-left">
+				<div class="news-btm">
+					<a href="{% url 'blog' %}" class="b-link-stripe b-animate-go  thickbox">
+						<img class="port-pic" src="{% static 'images/0.54442100_1564999873_35.jpg' %}" />
+						<div class="b-wrapper">
+							<h2 class="b-animate b-from-left    b-delay03 ">
+								<button>View full article</button>
+							</h2>
+						</div>
+					</a>
+				</div>
+				<a href="{% url 'blog' %}" class="b-link-stripe b-animate-go  thickbox">
+					<img class="port-pic" src="{% static 'images/0.94222200_1568209286_digit-farm.jpg' %}" />
+					<div class="b-wrapper">
+						<h2 class="b-animate b-from-left    b-delay03 ">
+							<button>View full article</button>
+						</h2>
+					</div>
+				</a>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="news-btm1">
+				<a href="{% url 'blog' %}" class="b-link-stripe b-animate-go  thickbox">
+					<img class="port-pic" class="img-responsive" src="{% static 'images/yield.png' %}" />
+					<div class="b-wrapper">
+						<h2 class="b-animate b-from-left b-left   b-delay03 ">
+							<span>Will There be A Decline in Crop Yield in Future?</span>
+							<button>View full article</button>
+						</h2>
+					</div>
+				</a>
+			</div>
+			<div class="fd-btn">
+				<a href="{% url 'blog' %}">More</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="contact">
+	<div class="container">
+		<div class="contact-main">
+			<div class="col-md-4 contact-left">
+				<h4>For Help center contact</h4>
+				<p><span>Email:</span><a href="mailto:@example.com">123agro@example.com</a></p>
+				<p><span>Phone:</span>+102 0000 0000</p>
+			</div>
+			<div class="col-md-4 contact-left">
+				<h4>Address</h4>
+				<p>Tops Technologies Surat Gujrat</p>
+			</div>
+			<div class="col-md-4 contact-left">
+				<h4>Follow us</h4>
+				<ul>
+					<li><a href="#"><span class="fb"> </span></a></li>
+					<li><a href="#"><span class="twit"> </span></a></li>
+					<li><a href="#"><span class="in"> </span></a></li>
+					<li><a href="https://www.youtube.com/channel/UClD4pMkQW_YMxrAZ1PoFibQ"><span class="yt"> </span></a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<div class="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.954856719987!2d-83.74137900000001!3d42.279486999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae3f7c142593%3A0x249796361efa6489!2sAmerican+Apparel!5e0!3m2!1sen!2sin!4v1418905123643"frameborder="0" style="border:0"></iframe>
+</div>
+{% endblock body %}

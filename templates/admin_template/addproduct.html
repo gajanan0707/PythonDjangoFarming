@@ -1,0 +1,12 @@
+{% extends 'admin_template/index.html' %}
+
+{% block title %} products Page {% endblock title %}
+
+{% block body %}
+<h1>Add Products</h1>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'include/form.html' %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock body %}

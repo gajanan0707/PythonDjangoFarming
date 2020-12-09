@@ -1,0 +1,125 @@
+{% extends 'admin_template/index.html' %}
+{% load static %}
+
+{% block body%}
+
+{% block stylesheet %}
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<meta name="keywords" content="Bootstrap Responsive Templates, Iphone Compatible Templates, Smartphone Compatible Templates, Ipad Compatible Templates, Flat Responsive Templates"/>
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/admincss/pag.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/foot.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' %}">
+<link rel="stylesheet" href="{% static 'js/custom.js' %}">
+
+{% endblock stylesheet %}
+
+
+<!--starts-blog-->
+<div class="container" >
+	    <div style="margin:10px">
+	<a class="btn btn-primary" href="{% url 'addblog' %}">Add Blog</a>
+		</div>
+</div>
+<div class="blog">
+	{% if all_blog %}
+	<div class="container">
+		{% for data in all_blog %}
+		<div class="blog-main">
+			<div class="col-md-8 blog-main-left">
+
+
+				<h3>BLOG</h3>
+				<div class="blg">
+					<div class="col-md-4 blog-left">
+						<a href="single.html"><img src="{{ data.blog_image.url }}" alt=""></a>
+					</div>
+					<div class="col-md-8 blog-left">
+						<h5>{{ title }}</h5>
+						<span>by <a href="#"> {{ data.created_by }}</a>{{  data.created_date }}  <a href="#">  comments&nbsp;(2)</a></span>
+						<h3>{{ data.title }}</h3>
+						<p>{{  data.blog_desc }}</p>
+						<span>Blog Type- {{data.cat_blog}} </span>
+						<div class="blog-btn">
+							<a href="{% url 'blogdetails' %} ">Read More</a>
+							<a href="{% url 'edit_blog' data.id %}">Edit</a>
+							<a href="{% url 'delete_blog' data.id %}">Delete</a>
+
+
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+		{% endif %}
+
+
+			<div class="col-md-4 blog-main-left">
+				<h3>CATEGORIES</h3>
+				<div class="ctgry">
+					<ul>
+						<li><a href="#">Technology</a></li>
+						<li><a href="#">Cultivation</a></li>
+						<li><a href="#">Trenches</a></li>
+						<li><a href="#">Irrigation</a></li>
+						<li><a href="#">Weeds</a></li>
+					</ul>
+				</div>
+				<div class="archives"  >
+					<h3>ARCHIVES</h3>
+					<ul>
+						<li><a href="#">November,2013</a></li>
+						<li><a href="#">May,2013</a></li>
+						<li><a href="#">April,2013</a></li>
+						<li><a href="#">June,2013</a></li>
+						<li><a href="#">August,2013</a></li>
+						<li><a href="#">January,2013</a></li>
+					</ul>
+				</div>
+				<div class="search">
+					<h3>SEARCH</h3>
+					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" />
+					<input type="submit" value="Search" />
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+
+<div class="pagination">
+
+  {% if all_blog.has_previous %}
+    <a class="pagination-action" href="?page=1">
+     <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+    </a>
+    <a class="pagination-action" href="?page={{ posts.previous_page_number }}">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </a>
+  {% endif %}
+
+  {% for num in all_blog.paginator.page_range %}
+
+    {% if all_blog.number == num %}
+    <span class="pagination-number pagination-current">{{ num }}</span>
+    {% elif num > all_blog.number|add:'-3' and num < all_blog.number|add:'3' %}
+    <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+    {% endif %}
+
+  {% endfor %}
+
+  {% if all_blog.has_next %}
+    <a class="pagination-action" href="?page={{ posts.next_page_number }}">
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </a>
+    <a class="pagination-action" href="?page={{ posts.paginator.num_pages }}">
+      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+    </a>
+  {% endif %}
+
+</div>
+</div>
+{% endblock body %}

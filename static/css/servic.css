@@ -1,0 +1,35 @@
+.contents-box {
+    padding: 15px 20px 15px 15px;
+    background-color: #efefef;
+    border: 1px solid #c2c2c2;
+    border-top: 2px solid #577C55;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+div {
+    display: block;
+}
+
+body {
+    font-size: 0.875em;
+}
+media="(min-width: 47.5em)"
+.media__img img, .media__img--rtl img {
+    display: inline;
+}
+img {
+    vertical-align: right;
+    max-width: 100%;
+    height: auto;
+}
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+*, *:before, *:after {
+    box-sizing: initial !important;
+}
+img[Attributes Style] {
+    width: 300px;
+    height: 200px;
+}

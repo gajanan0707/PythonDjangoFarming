@@ -1,0 +1,21 @@
+{% extends 'admin_template/index.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container">
+    <h1>Profile</h1>
+    <p>username: {{ user }}</p>
+    <p>First name: {{ user.first_name }}</p>
+    <p>Last name:  {{ user.last_name }} </p>
+    <p>Email: {{ user.email }}</p>
+    <p>Date of Birth: {{ user.dob }}</p>
+    <p>City: {{ user.city  }}</p>
+    <p>Adress:  {{ user.adress }}</p>
+    <p>Gender: {{ user.gender }} </p>
+<button type="button" class="btn btn-primary">Edit Information</button>
+    <a href="{% url 'password_change' %}" ><button type="button" class="btn btn-link">Change Password</button></a>
+
+</div>
+
+
+{% endblock body %}

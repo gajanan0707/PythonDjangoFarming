@@ -1,0 +1,40 @@
+{% extends 'admin_template/index.html' %}
+
+{% load static %}
+
+{% block body %}
+<div>
+<h1>User Feedback</h1>
+    </div>
+<div style="margin:20px">
+    <table class="table table-sm table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Second Name</th>
+            <th scope="col">Email </th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">Message</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% if cont %}
+        {% for data in cont %}
+        <tr>
+            <th scope="row">{{ data.id }}</th>
+            <td>{{ data.first_name }}</td>
+            <td>{{ data.second_name }}</td>
+            <td>{{ data.email_id }}</td>
+             <td>{{ data.mobile_no }}</td>
+            <td>{{ data.message }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr><td colspan="4" style="text-align: center;">Not found</td></tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

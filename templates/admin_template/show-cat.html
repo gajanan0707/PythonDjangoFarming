@@ -1,0 +1,41 @@
+{% extends 'admin_template/index.html' %}
+{% load static %}
+
+
+
+{% block body%}
+  <div class="mb-4" style="margin:10px">
+    <a class="btn btn-primary" href="{% url 'add_category' %}">Add Blog Category</a>
+  </div>
+<div class="table-responsive-md">
+    <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">blog_Cat_name</th>
+        <th scope="col">created_by</th>
+        <th scope="col">created_at</th>
+        <th scope="col">updated_at</th>
+      </tr>
+    </thead>
+     <tbody>
+     {% if values %}
+    {% for data in values %}
+        <tr>
+            <th>{{ data.id }}</th>
+            <td>{{ data.blog_Cat_name }}</td>
+            <td>{{ data.created_by }}</td>
+            <td>{{ data.created_at }}</td>
+             <td>{{ data.updated_at }}</td>
+
+        </tr>
+    {% endfor %}
+    {% else %}
+    <tr><td colspan="4" style="text-align: center;">Not found</td></tr>
+      {% endif %}
+    </tbody>
+</table>
+</div>
+
+
+{% endblock body%}

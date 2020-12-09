@@ -1,0 +1,18 @@
+{% load widget_tweaks %}
+{% if form.non_field_errors %}
+    {% for non_error in form.non_field_errors %}
+        <div class="alert alert-danger" role="alert">
+          {{ non_error }}
+        </div>
+    {% endfor %}
+{% endif %}
+{% for field in form %}
+    <div class="form-group">
+        {{ field.label_tag }}
+        {% render_field field clasd:ddds="form-control" %}
+<!--        {% if field.help_text %}-->
+<!--            {{ field.help_text }}-->
+<!--        {% endif %}-->
+
+    </div>
+{% endfor %}

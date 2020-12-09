@@ -1,0 +1,14 @@
+{% extends 'admin_template/index.html' %}
+
+{% block title %} Edit Blog Page {% endblock title %}
+{% block body %}
+
+<div class="container">
+<h1>Edit Blog</h1>
+<form method="post" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+    {% include 'include/form.html' %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}

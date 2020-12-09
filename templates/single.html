@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+
+<link href="{% static 'css/cus.css' %}" rel='stylesheet' type='text/css' />
+
+{% endblock stylesheet %}
+
+{% block body%}
+
+
+<!--starts-blog-->
+<div class="container">
+	<a class="btn btn-primary" href="{% url 'addblog' %}">Add Blog</a>
+</div>
+<div class="blog">
+	{% if all_blog %}
+	<div class="container">
+		{% for data in all_blog %}
+		<div class="blog-main">
+			<div class="col-md-8 blog-main-left">
+
+
+				<h3>BLOG</h3>
+				<div class="blg">
+					<div class="col-md-4 blog-left">
+						<a href="single.html"><img src="{{ data.blog_image.url }}" alt="Responsive image"></a>
+					</div>
+					<div class="col-md-8 blog-left">
+						<span>by <a href="#"> {{ data.created_by }}</a>{{  data.created_date }}  <a href="#">  comments&nbsp;(2)</a></span>
+						<h3>{{ data.title }}</h3>
+						<h4>{{ data.full_desc }}</h4>
+						<span>Blog Type- {{data.cat_blog}} </span>
+						<div class="blog-btn">
+
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+		{% endif %}
+
+
+
+
+		<div class="pagination">
+
+			{% if all_blog.has_previous %}
+			<a class="pagination-action" href="?page=1">
+				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+			</a>
+			<a class="pagination-action" href="?page={{ posts.previous_page_number }}">
+				<i class="fa fa-angle-left" aria-hidden="true"></i>
+			</a>
+			{% endif %}
+
+			{% for num in all_blog.paginator.page_range %}
+
+			{% if all_blog.number == num %}
+			<span class="pagination-number pagination-current">{{ num }}</span>
+			{% elif num > all_blog.number|add:'-3' and num < all_blog.number|add:'3' %}
+			<a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+			{% endif %}
+
+			{% endfor %}
+
+			{% if all_blog.has_next %}
+			<a class="pagination-action" href="?page={{ posts.next_page_number }}">
+				<i class="fa fa-angle-right" aria-hidden="true"></i>
+			</a>
+			<a class="pagination-action" href="?page={{ posts.paginator.num_pages }}">
+				<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+			</a>
+			{% endif %}
+
+		</div>
+	</div>
+	{% endblock body %}

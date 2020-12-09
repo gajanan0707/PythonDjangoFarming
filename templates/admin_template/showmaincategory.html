@@ -1,0 +1,35 @@
+{% extends 'admin_template/index.html' %}
+{% load static %}
+
+
+
+{% block body%}
+
+<div class="table-responsive-md">
+    <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+     <tbody>
+     {% if values %}
+    {% for data in values %}
+        <tr>
+            <th>{{ data.id }}</th>
+            <td><a href="{% url 'subcategory' data.id %}" >{{ data.product_type }}</a></td>
+            <td>{{ data.product_desc }}</td>
+        </tr>
+    {% endfor %}
+    {% else %}
+    <tr><td colspan="4" style="text-align: center;">Not found</td></tr>
+      {% endif %}
+    </tbody>
+</table>
+</div>
+
+
+{% endblock body%}

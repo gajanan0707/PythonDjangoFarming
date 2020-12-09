@@ -1,0 +1,159 @@
+a[href$=".pdf"] {
+  background: url(http://kamalkisan.com/wp-content/uploads/2017/11/Adobe_PDF_file_icon_24x24.png) no-repeat left center;
+  padding: 20px 20px 20px 40px;
+}
+
+
+.easy_t_single_testimonial blockquote p span.testimonial-client {
+    font-weight: bold;
+}
+
+img.attachment-easy_testimonial_thumb{
+width: 100px !important;
+height: 100px !important;
+}
+
+#responsive-form{
+	max-width:600px /*-- change this to get your desired form width --*/;
+	margin:0;
+        width:100%;
+}
+.form-row{
+	width: 100%;
+}
+.column-half, .column-full{
+	float: left;
+	position: relative;
+	padding: 0.65rem;
+	width:100%;
+	-webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/**---------------- Media query ----------------**/
+@media only screen and (min-width: 48em) { 
+	.column-half{
+		width: 50%;
+	}
+}
+
+/**************************************************************************/
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-webkit-box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+	      box-sizing: border-box
+}
+.wpcf7 input[type="text"]:focus{
+	background: #fff;
+}
+.wpcf7-submit{
+	float: right;
+	background: #CA0002;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	padding: 8px 20px;
+	cursor: pointer;
+}
+.wpcf7-submit:hover{
+	background: #ff0000;
+}
+span.wpcf7-not-valid-tip{
+	text-shadow: none;
+	font-size: 12px;
+	color: #fff;
+	background: #ff0000;
+	padding: 5px;
+}
+div.wpcf7-validation-errors { 
+	text-shadow: none;
+	border: transparent;
+	background: #f9cd00;
+	padding: 5px;
+	color: #9C6533;
+	text-align: center;
+	margin: 0;
+	font-size: 12px;
+}
+div.wpcf7-mail-sent-ok{
+	text-align: center;
+	text-shadow: none;
+	padding: 5px;
+	font-size: 12px;
+	background: #59a80f;
+	border-color: #59a80f;
+	color: #fff;
+	margin: 0;
+}
+
+
+
+/******************************************************************************/
+#pgc-85-0-0 h3, #pgc-85-0-1 h3{
+color: #5A5752;
+}
+
+
+.entry-header h1.entry-title, .entry-header h1.page-title, .page-header h1.entry-title, .page-header h1.page-title {
+    color: #ffffff;
+}
+
+.single .entry-header, .page .site-content > .entry-header, .blog .page-header, .archive .page-header, .search-results .page-header, .search-no-results .page-header, .error404 .page-header {
+    background: #FCAF32;
+}
+
+.custom-icon {
+   font-size:45px;
+   background:#666;
+   background: #FCAF32;
+   padding:30px;
+   -webkit-border-radius:1100%;
+   -moz-border-radius:100%;
+   -o-border-radius:100%;
+   border-radius:100%;
+   border:6px solid #fff;
+   color:#fff;
+   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46);
+   text-align:center;
+   display:table-cell;
+   vertical-align:middle;
+   width:60px;
+   height:60px;
+   -moz-transition:.5s;
+   -webkit-transition:.5s;
+   -o-transition:.5s;
+   transition:.5s;
+}
+
+.custom-icon:hover {
+   background: #829748;
+}
+
+.fix-editor {
+   display:none;
+}
+
+.icon-wrapper {
+   display:inline-block;
+}
+
+/*Mission Statement */
+.mission{
+  font-size: 24px;
+  color: #5A5752;
+  font-weight:bold;
+}
+
+.just{
+  text-align: justify;
+}

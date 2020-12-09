@@ -1,0 +1,17 @@
+{% extends 'admin_template/index.html' %}
+
+{% load static %}
+{% block title %} Products Adds Page {% endblock title %}
+
+
+{% block body %}
+
+<div class="container">
+    <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {% include 'include/form.html' %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}

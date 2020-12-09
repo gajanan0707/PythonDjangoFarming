@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Login Page {% endblock title %}
+{% block body %}
+<body>
+  <div class="container">
+    <div style="margin:10px">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+            <div style="margin:25px">
+            <h1 class="card-title text-center">Login Form</h1>
+          </div>
+            <form class="form-signin" novalidate method="post">
+                {% csrf_token %}
+                {% include 'include/form.html' %}
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
+              <a class="float-center mt-5 small" href="{% url 'signup' %}">Sign Up</a>
+              <a class="float-center text-center mt-2 small" href="{% url 'password_reset' %}">Forget Password ?</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+{% endblock body %}

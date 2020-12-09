@@ -1,0 +1,18 @@
+{% extends 'admin_template/index.html' %}
+
+{% load static %}
+{% block title %} Products Add Page {% endblock title %}
+
+
+{% block body %}
+<h1>Add Products</h1>
+<div>
+<div class="container">
+<form method="post" >
+    {% csrf_token %}
+    {% include 'include/form.html' %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+{% endblock body %}

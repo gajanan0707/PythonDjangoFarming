@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+{% block head%}
+<head>
+	<title>Farming Web Assistent</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<meta name="keywords" content="Bootstrap Responsive Templates, Iphone Compatible Templates, Smartphone Compatible Templates, Ipad Compatible Templates, Flat Responsive Templates"/>
+	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/foot.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' %}">
+
+	{% block stylesheet %} <link rel="stylesheet" href="{% static 'js/custom.js' %}"> {% endblock stylesheet %}
+
+</head>
+{% endblock head %}
+
+
+
+{% block header %}
+<!--start-header-->
+<div id="home" class="header">
+	<div class="top-header">
+		<div class="container">
+			<div class="logo">
+				<a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+			</div>
+			<div class="bird-container bird-container--one">
+				<div class="bird bird--one"></div>
+			</div>
+
+			<div class="bird-container bird-container--two">
+				<div class="bird bird--two"></div>
+			</div>
+
+			<div class="bird-container bird-container--three">
+				<div class="bird bird--three"></div>
+			</div>
+
+			<div class="bird-container bird-container--four">
+				<div class="bird bird--four"></div>
+			</div>
+
+
+			<!--start-top-nav-->
+
+			<div class="top-nav">
+				<ul>
+
+					{% if user.is_authenticated %}
+					Hello, {{  user.first_name }}
+					<li><a class="play-icon popup-with-zoom-anim" href="{% url 'logout' %}">Log out</a></li>
+					<li><a class="btn btn-secondary" href="{% url 'password_change' %}">Change password</a></li>
+					{% if user.user_type == 'dealer' %}
+					<li><a class="btn btn-primary" href="{% url 'dashboard' %}">Dealer Dashboard</a></li>
+					{% endif %}
+
+					{% else %}
+					<li><a class="play-icon popup-with-zoom-anim" href="{% url 'login' %}"><span> </span>Log in</a></li>
+					<li><a class="play-icon popup-with-zoom-anim" href="{% url 'signup' %}">Sign up</a></li>
+
+
+					{% endif %}
+
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+	<!--End-header-->
+	<div class="navgation">
+		<div class="menu" >
+			<a class="toggleMenu" href="{% url 'index' %}"><img src="{% static 'images/menu-icon.png' %}" alt="" /> </a>
+			<ul class="nav" id="nav">
+				<li><a href="{% url 'index' %}">Home</a></li>
+				<li><a href="{% url 'about' %}">About Us</a></li>
+				<li><a href="{% url 'complate_view' %}">Complaint</a></li>
+				<li><a href="{% url 'blog' %}">Blog</a></li>
+				<li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+
+
+			</ul>
+			<!----start-top-nav-script---->
+			<script type="text/javascript" src="{% static 'js/responsive-nav.js' %}"></script>
+			<script type="text/javascript">
+							jQuery(document).ready(function($) {
+								$(".scroll").click(function(event){
+									event.preventDefault();
+									$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+								});
+							});
+							</script>
+			<!----//End-top-nav-script---->
+		</div>
+		<div class="search2">
+			<form>
+				<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+				<input type="submit" value="">
+			</form>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+{% endblock header %}
+
+
+{% block body %}
+
+{% endblock body %}
+
+
+{% block footer %}
+<div class="footer">
+	<div class="container">
+		<div class="footer-text">
+			<p>DESIGN BY <a href="#"> Gajanan</a></p>
+		</div>
+	</div>
+</div>
+{% endblock footer %}
+</html>

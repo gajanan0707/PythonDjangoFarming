@@ -1,0 +1,70 @@
+{% extends 'admin_template/index.html' %}
+{% load static %}
+
+
+{% block body %}
+{% block stylesheet %}
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<link href="{% static 'css/shopcss.css' %}" rel="stylesheet">
+
+{% endblock stylesheet %}
+
+<div class="mb-4">
+    <a class="btn btn-primary" href="#">Add Products</a>
+  </div>
+
+
+<div class="container">
+    <h3 class="h3"> {{ data.product_name }} </h3>
+{% if all_items %}
+{% for data in all_items %}
+
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="{{data.prod_image.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">Sell</span>
+                    <span class="product-discount-label">20%</span>
+                </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star disable"></li>
+                </ul>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">{{ data.subproduct }}</a></h3>
+                    <div class="price">{{ data.price }}<span>$20.00</span>
+                    </div>
+                    <a class="add-to-cart" href="">+ Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endif %}
+
+</div>
+<hr>
+
+
+
+
+
+
+{% endblock body %}
